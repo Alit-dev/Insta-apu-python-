@@ -32,6 +32,8 @@ def get_instagram_data():
         return Response(json.dumps({"error": "username parameter is required"}, indent=4), mimetype='application/json')
 
     data = fetch_instagram_profile(username)
+    
+    # Return pretty printed JSON with UTF-8 encoding
     return Response(json.dumps(data, indent=4, ensure_ascii=False), mimetype='application/json')
 
 if __name__ == '__main__':
